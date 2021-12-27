@@ -1,5 +1,5 @@
-~/pps-test1-Kothwalshaharin-12$ gcc -g p5original.c
-~/pps-test1-Kothwalshaharin-12$ gdb a.out
+gcc -g p5original.c
+ gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -16,33 +16,29 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x772: file p5original.c, line 6.
+Breakpoint 1 at 0x82e: file p5original.c, line 31.
 (gdb) r
-Starting program: /home/runner/pps-test1-Kothwalshaharin-12/a.out 
+Starting program: /home/runner/pps-test1-Kothwalshaharin-16/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p5original.c:6
-6   {
+Breakpoint 1, main () at p5original.c:31
+31    {
 (gdb) n
-8     printf("enter two numbers\n");
+33      input(&a, &b, &c);
 (gdb) n
-enter two numbers
-9     input(&a,&b);
+enter the first number: 6
+enter the second number: 7
+enter the third number: 9
+34      cmp(a, b, c, &large);
 (gdb) n
-6
-7
-10    add(a,b,&c);
+35      output(large);
 (gdb) n
-11    output(a,b,c);
+the largest is: 9
+36      return 0;
 (gdb) n
-12    return 0;
-(gdb) n
-13  }
-(gdb) n
-__libc_start_main (main=0x55e3a700076a <main>, argc=1, 
-    argv=0x7ffdc7fda658, init=<optimized out>, fini=<optimized out>, 
-    rtld_fini=<optimized out>, stack_end=0x7ffdc7fda648)
-    at ../csu/libc-start.c:344
+37    }(gdb) n
+__libc_start_main (main=0x55fe12600826 <main>, argc=1, argv=0x7fffeb697d58, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7fffeb697d48) at ../csu/libc-start.c:344
 344 ../csu/libc-start.c: No such file or directory.
-(gdb) n
-sum of 6+7=13[Inferior 1 (process 202) exited normally]
+(gdb) 

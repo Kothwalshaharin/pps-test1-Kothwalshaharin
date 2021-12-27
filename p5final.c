@@ -1,26 +1,38 @@
 #include<stdio.h>
-void input(int *a, int *b);
-void add(int a, int b, int *sum);
-void output(int a, int b, int sum);
-int main()
+void input(int *a, int *b, int *c)
 {
-  int a,b,c;
-  printf("enter two numbers\n");
-  input(&a,&b);
-  add(a,b,&c);
-  output(a,b,c);
-  return 0;
+  printf("enter the first number: ");
+  scanf("%d" , a);
+  printf("enter the second number: ");
+  scanf("%d" , b);
+  printf("enter the third number: ");
+  scanf("%d" , c);
 }
-void input(int *a,int *b)
+void cmp(int a, int b, int c, int *large)
 {
-  scanf("%d%d",a,b);
+  if(a>b){
+    if(a>c){
+      *large = a;
+}else{
+  *large = c;
 }
-void add(int a, int b, int *sum)
-{
-  *sum=a+b;
-}
-void output(int a, int b, int sum)
-{
-  printf("sum of %d+%d=%d",a,b,sum);
-}
+  }else{
+    if(b>c){
+      *large = b;
+    }else{
+      *large = c;
+    }
+  }
+  }
+  void output(int large){
+    printf("the largest is: %d\n", large);
+  }
+  int main()
+  {
+    int a, b, c, large;
+    input(&a, &b, &c);
+    cmp(a, b, c, &large);
+    output(large);
+    return 0;
+  }
 
