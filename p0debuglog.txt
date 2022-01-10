@@ -34,7 +34,7 @@ shaharin
 (gdb) n
 shaharin
 8     return 0;
-(gdb) c
+(gdb) 
 Continuing.
 [Inferior 1 (process 120) exited normally]
 (gdb) Quit
