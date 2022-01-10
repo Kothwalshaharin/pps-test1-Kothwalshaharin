@@ -8,3 +8,4 @@ int main()
   printf("%f",sum);
   return 0;
 }
+
